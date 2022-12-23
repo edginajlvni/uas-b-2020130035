@@ -52,7 +52,7 @@ class ItemController extends Controller
         // return "Data berhasil ditambahkan!";
 
         Item::create($validateData);
-        $request->session()->flash('success', "Successfully adding {$validateData['nama']}!");
+        $request->session()->flash('success', "Berhasil menambahkan ID :{$validateData['id']}, dengan nama: {$validateData['nama']}!");
         return redirect()->route('items.index');
     }
 
@@ -91,12 +91,12 @@ class ItemController extends Controller
             'id' => 'required|max:20',
             'nama' => 'required|max:1000',
             'harga' => 'required|min: 0, max:898989',
-            'stok' => 'required|min:0 , max:100',
+            'stok' => 'required|min:0 , max:100000',
         ]);
 
         $item->update($validateData);
         $request->session()
-            ->flash('success', "Successfully updating {$validateData['id']}!");
+            ->flash('success', "Berhasil melakukan update untuk ID: {$validateData['id']}, dengan nama: {$validateData['nama']}!");
         return redirect()->route('items.index');
     }
 
