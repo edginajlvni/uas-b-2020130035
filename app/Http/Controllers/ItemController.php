@@ -37,7 +37,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'id' => 'required|max:100',
+            'id' => 'required|max:20',
             'nama' => 'required|max:1000',
             'harga' => 'required|min: 0, max:898989',
             'stok' => 'required|min:0 , max:100000',
