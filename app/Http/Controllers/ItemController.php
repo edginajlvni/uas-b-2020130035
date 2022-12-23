@@ -96,7 +96,7 @@ class ItemController extends Controller
 
         $item->update($validateData);
         $request->session()
-            ->flash('success', "Successfully updating {$validateData['nama']}!");
+            ->flash('success', "Successfully updating {$validateData['id']}!");
         return redirect()->route('items.index');
     }
 
