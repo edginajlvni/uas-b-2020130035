@@ -49,7 +49,6 @@ class ItemController extends Controller
         // $book->kategori = $validateData['kategori'];
         // $book->penerbit = $validateData['penerbit'];
         // $book->save();
-        // return "Data berhasil ditambahkan!";
 
         Item::create($validateData);
         $request->session()->flash('success', "Berhasil menambahkan ID :{$validateData['id']}, dengan nama: {$validateData['nama']}!");
